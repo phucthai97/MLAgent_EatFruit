@@ -2,15 +2,6 @@
     "MoveAgent2D": {
         "checkpoints": [
             {
-                "steps": 332027,
-                "file_path": "results\\Player3\\MoveAgent2D\\MoveAgent2D-332027.onnx",
-                "reward": null,
-                "creation_time": 1717045524.6807687,
-                "auxillary_file_paths": [
-                    "results\\Player3\\MoveAgent2D\\MoveAgent2D-332027.pt"
-                ]
-            },
-            {
                 "steps": 499987,
                 "file_path": "results\\Player3\\MoveAgent2D\\MoveAgent2D-499987.onnx",
                 "reward": 1.8675001710653305,
@@ -36,15 +27,33 @@
                 "auxillary_file_paths": [
                     "results\\Player3\\MoveAgent2D\\MoveAgent2D-587107.pt"
                 ]
+            },
+            {
+                "steps": 750064,
+                "file_path": "results\\Player3\\MoveAgent2D\\MoveAgent2D-750064.onnx",
+                "reward": 1.8868751600384712,
+                "creation_time": 1717047320.657968,
+                "auxillary_file_paths": [
+                    "results\\Player3\\MoveAgent2D\\MoveAgent2D-750064.pt"
+                ]
+            },
+            {
+                "steps": 883090,
+                "file_path": "results\\Player3\\MoveAgent2D\\MoveAgent2D-883090.onnx",
+                "reward": null,
+                "creation_time": 1717047649.8647704,
+                "auxillary_file_paths": [
+                    "results\\Player3\\MoveAgent2D\\MoveAgent2D-883090.pt"
+                ]
             }
         ],
         "final_checkpoint": {
-            "steps": 587107,
+            "steps": 883090,
             "file_path": "results\\Player3\\MoveAgent2D.onnx",
-            "reward": 1.845714460526194,
-            "creation_time": 1717045916.8558588,
+            "reward": null,
+            "creation_time": 1717047649.8647704,
             "auxillary_file_paths": [
-                "results\\Player3\\MoveAgent2D\\MoveAgent2D-587107.pt"
+                "results\\Player3\\MoveAgent2D\\MoveAgent2D-883090.pt"
             ]
         }
     },

@@ -51,5 +51,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "MLAgents_EatFruits.sln"
+    "dotnet.defaultSolution": "MLAgentss_EatFruit.sln"
 }
