@@ -1,0 +1,65 @@
+{
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "2.3.0+cpu"
+    },
+    "MoveAgent2D": {
+        "checkpoints": [
+            {
+                "steps": 3172,
+                "file_path": "results\\Player1z\\MoveAgent2D\\MoveAgent2D-3172.onnx",
+                "reward": -1.9875000938773155,
+                "creation_time": 1716955509.3639183,
+                "auxillary_file_paths": [
+                    "results\\Player1z\\MoveAgent2D\\MoveAgent2D-3172.pt"
+                ]
+            },
+            {
+                "steps": 35364,
+                "file_path": "results\\Player1z\\MoveAgent2D\\MoveAgent2D-35364.onnx",
+                "reward": -1.9875001013278961,
+                "creation_time": 1716955639.9341383,
+                "auxillary_file_paths": [
+                    "results\\Player1z\\MoveAgent2D\\MoveAgent2D-35364.pt"
+                ]
+            },
+            {
+                "steps": 55924,
+                "file_path": "results\\Player1z\\MoveAgent2D\\MoveAgent2D-55924.onnx",
+                "reward": null,
+                "creation_time": 1716955739.4805503,
+                "auxillary_file_paths": [
+                    "results\\Player1z\\MoveAgent2D\\MoveAgent2D-55924.pt"
+                ]
+            },
+            {
+                "steps": 499990,
+                "file_path": "results\\Player1z\\MoveAgent2D\\MoveAgent2D-499990.onnx",
+                "reward": -1.9875001013278961,
+                "creation_time": 1716956248.8569577,
+                "auxillary_file_paths": [
+                    "results\\Player1z\\MoveAgent2D\\MoveAgent2D-499990.pt"
+                ]
+            },
+            {
+                "steps": 609578,
+                "file_path": "results\\Player1z\\MoveAgent2D\\MoveAgent2D-609578.onnx",
+                "reward": -1.9875001013278961,
+                "creation_time": 1716956383.097441,
+                "auxillary_file_paths": [
+                    "results\\Player1z\\MoveAgent2D\\MoveAgent2D-609578.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 609578,
+            "file_path": "results\\Player1z\\MoveAgent2D.onnx",
+            "reward": -1.9875001013278961,
+            "creation_time": 1716956383.097441,
+            "auxillary_file_paths": [
+                "results\\Player1z\\MoveAgent2D\\MoveAgent2D-609578.pt"
+            ]
+        }
+    }
+}

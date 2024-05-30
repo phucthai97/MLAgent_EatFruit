@@ -1,0 +1,56 @@
+{
+    "MoveAgent2D": {
+        "checkpoints": [
+            {
+                "steps": 3912,
+                "file_path": "results\\Player2\\MoveAgent2D\\MoveAgent2D-3912.onnx",
+                "reward": -1.9875001013278961,
+                "creation_time": 1716956577.8214219,
+                "auxillary_file_paths": [
+                    "results\\Player2\\MoveAgent2D\\MoveAgent2D-3912.pt"
+                ]
+            },
+            {
+                "steps": 7072,
+                "file_path": "results\\Player2\\MoveAgent2D\\MoveAgent2D-7072.onnx",
+                "reward": -1.9875000951190789,
+                "creation_time": 1716956628.4555643,
+                "auxillary_file_paths": [
+                    "results\\Player2\\MoveAgent2D\\MoveAgent2D-7072.pt"
+                ]
+            },
+            {
+                "steps": 499992,
+                "file_path": "results\\Player2\\MoveAgent2D\\MoveAgent2D-499992.onnx",
+                "reward": -1.9875001013278961,
+                "creation_time": 1716957224.5587018,
+                "auxillary_file_paths": [
+                    "results\\Player2\\MoveAgent2D\\MoveAgent2D-499992.pt"
+                ]
+            },
+            {
+                "steps": 997828,
+                "file_path": "results\\Player2\\MoveAgent2D\\MoveAgent2D-997828.onnx",
+                "reward": -1.9875001013278961,
+                "creation_time": 1716957786.9047205,
+                "auxillary_file_paths": [
+                    "results\\Player2\\MoveAgent2D\\MoveAgent2D-997828.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 997828,
+            "file_path": "results\\Player2\\MoveAgent2D.onnx",
+            "reward": -1.9875001013278961,
+            "creation_time": 1716957786.9047205,
+            "auxillary_file_paths": [
+                "results\\Player2\\MoveAgent2D\\MoveAgent2D-997828.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "2.3.0+cpu"
+    }
+}
