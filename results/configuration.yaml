@@ -25,7 +25,7 @@ behaviors:
     reward_signals:
       extrinsic:
         gamma: 0.99
-        strength: 0.4
+        strength: 0.25
         network_settings:
           normalize: false
           hidden_units: 128
@@ -35,7 +35,7 @@ behaviors:
           goal_conditioning_type: hyper
           deterministic: false
       gail:
-        strength: 0.3
+        strength: 0.75
         demo_path: MoveAgent2DDemo/MoveAgent2D.demo
     init_path: null
     keep_checkpoints: 5
