@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 49290310825256341}
   - component: {fileID: 59433258877668607}
   - component: {fileID: 1405749749619065115}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Fruit
-  m_TagString: Untagged
+  m_TagString: Fruit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
