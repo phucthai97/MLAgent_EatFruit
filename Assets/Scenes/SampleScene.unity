@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 130855839}
   - component: {fileID: 130855838}
   m_Layer: 8
-  m_Name: Rock (3)
+  m_Name: Rock (6)
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1506,7 +1506,7 @@ GameObject:
   - component: {fileID: 649967078}
   - component: {fileID: 649967077}
   m_Layer: 8
-  m_Name: Rock (6)
+  m_Name: Rock (7)
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2020,6 +2020,9 @@ MonoBehaviour:
   - {fileID: 1643809905}
   - {fileID: 976369448}
   - {fileID: 1902872133}
+  - {fileID: 1290180621}
+  - {fileID: 703487935}
+  - {fileID: 130855837}
   _prefabItem: {fileID: 6596918748920635153, guid: 49430e9d527ccdb43b015fcaf4cbb1f6, type: 3}
   _initialSize: 1
   _fruits: []
@@ -2539,7 +2542,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2902496c0120472b90269f94a0aec7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Record: 0
+  Record: 1
   NumStepsToRecord: 0
   DemonstrationName: MoveAgent2D
   DemonstrationDirectory: MoveAgent2DDemo
@@ -2604,7 +2607,7 @@ MonoBehaviour:
     VectorActionSpaceType: 0
     hasUpgradedBrainParametersWithActionSpec: 1
   m_Model: {fileID: 0}
-  m_InferenceDevice: 1
+  m_InferenceDevice: 3
   m_BehaviorType: 1
   m_BehaviorName: MoveAgent2D
   TeamId: 0
@@ -3375,8 +3378,8 @@ Transform:
   - {fileID: 1902872133}
   - {fileID: 1290180621}
   - {fileID: 703487935}
-  - {fileID: 649967076}
   - {fileID: 130855837}
+  - {fileID: 649967076}
   - {fileID: 383506558}
   - {fileID: 215956848}
   - {fileID: 1409437496}
