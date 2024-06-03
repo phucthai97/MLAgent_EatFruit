@@ -2020,6 +2020,10 @@ MonoBehaviour:
   - {fileID: 1643809905}
   - {fileID: 976369448}
   - {fileID: 1902872133}
+  - {fileID: 1290180621}
+  - {fileID: 703487935}
+  - {fileID: 130855837}
+  - {fileID: 649967076}
   _prefabItem: {fileID: 6596918748920635153, guid: 49430e9d527ccdb43b015fcaf4cbb1f6, type: 3}
   _initialSize: 1
   _fruits: []
@@ -2594,7 +2598,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    VectorObservationSize: 4
+    VectorObservationSize: 5
     NumStackedVectorObservations: 1
     m_ActionSpec:
       m_NumContinuousActions: 0

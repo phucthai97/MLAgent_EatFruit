@@ -37,7 +37,7 @@ public class Player : Agent
         sensor.AddObservation(transform.localPosition.y);
         sensor.AddObservation(_rd2d.velocity.x);
         sensor.AddObservation(_rd2d.velocity.y);
-        //sensor.AddObservation(_isGrounded);
+        sensor.AddObservation(_isGrounded);
 
         //sensor.AddObservation(_gameManager.Fruits[0].transform.localPosition.x);
         //sensor.AddObservation(_gameManager.Fruits[0].transform.localPosition.y);
