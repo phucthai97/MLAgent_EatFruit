@@ -2484,7 +2484,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294963656
   m_ObservationStacks: 1
-  rayHitColor: {r: 1, g: 0, b: 0, a: 1}
+  rayHitColor: {r: 0, g: 0.07107782, b: 1, a: 1}
   rayMissColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1146040291
 GameObject:
@@ -2518,7 +2518,7 @@ Transform:
   m_GameObject: {fileID: 1146040291}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 7, z: 0}
+  m_LocalPosition: {x: 0, y: 6, z: 0}
   m_LocalScale: {x: 1.8, y: 1.8, z: 1.8}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2594,7 +2594,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    VectorObservationSize: 12
+    VectorObservationSize: 4
     NumStackedVectorObservations: 1
     m_ActionSpec:
       m_NumContinuousActions: 0
@@ -3326,10 +3326,10 @@ MonoBehaviour:
   m_SensorName: SensorFruit
   m_DetectableTags:
   - Fruit
-  m_RaysPerDirection: 11
-  m_MaxRayDegrees: 172
+  m_RaysPerDirection: 5
+  m_MaxRayDegrees: 157
   m_SphereCastRadius: 0.4
-  m_RayLength: 42
+  m_RayLength: 41
   m_RayLayerMask:
     serializedVersion: 2
     m_Bits: 4294965320

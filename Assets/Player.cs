@@ -34,43 +34,45 @@ public class Player : Agent
     public override void CollectObservations(VectorSensor sensor)
     {
         sensor.AddObservation(transform.localPosition.x);
+        sensor.AddObservation(transform.localPosition.y);
         sensor.AddObservation(_rd2d.velocity.x);
-        sensor.AddObservation(_isGrounded);
+        sensor.AddObservation(_rd2d.velocity.y);
+        //sensor.AddObservation(_isGrounded);
 
         //sensor.AddObservation(_gameManager.Fruits[0].transform.localPosition.x);
         //sensor.AddObservation(_gameManager.Fruits[0].transform.localPosition.y);
 
-        var rayPerceptionInput = _raySensorObstacle.GetRayPerceptionInput();
-        var rayPerceptionOutput = RayPerceptionSensor.Perceive(rayPerceptionInput);
-        // Thêm quan sát vào sensor và vẽ tia cảm biến
-        foreach (var rayOutput in rayPerceptionOutput.RayOutputs)
-        {
-            // Thêm khoảng cách chuẩn hóa
-            sensor.AddObservation(rayOutput.HitFraction);
+        // var rayPerceptionInput = _raySensorObstacle.GetRayPerceptionInput();
+        // var rayPerceptionOutput = RayPerceptionSensor.Perceive(rayPerceptionInput);
+        // // Thêm quan sát vào sensor và vẽ tia cảm biến
+        // foreach (var rayOutput in rayPerceptionOutput.RayOutputs)
+        // {
+        //     // Thêm khoảng cách chuẩn hóa
+        //     sensor.AddObservation(rayOutput.HitFraction);
 
-            // Thêm chỉ số tag của đối tượng
-            sensor.AddObservation(rayOutput.HitTagIndex);
-        }
+        //     // Thêm chỉ số tag của đối tượng
+        //     sensor.AddObservation(rayOutput.HitTagIndex);
+        // }
 
 
-        rayPerceptionInput = _raySensorFruit.GetRayPerceptionInput();
-        rayPerceptionOutput = RayPerceptionSensor.Perceive(rayPerceptionInput);
-        bool detectFruit = false;
-        float hitFraction = 0;
-        int hitTagIndex = 0;
-        foreach (var rayOutput in rayPerceptionOutput.RayOutputs)
-        {
-            if (rayOutput.HitTaggedObject)
-            {
-                hitFraction = rayOutput.HitFraction;
-                hitTagIndex = rayOutput.HitTagIndex;
-                detectFruit = true;
-                break;
-            }
-        }
-        sensor.AddObservation(detectFruit);
-        sensor.AddObservation(hitFraction);
-        sensor.AddObservation(hitTagIndex);
+        // rayPerceptionInput = _raySensorFruit.GetRayPerceptionInput();
+        // rayPerceptionOutput = RayPerceptionSensor.Perceive(rayPerceptionInput);
+        // bool detectFruit = false;
+        // float hitFraction = 0;
+        // int hitTagIndex = 0;
+        // foreach (var rayOutput in rayPerceptionOutput.RayOutputs)
+        // {
+        //     if (rayOutput.HitTaggedObject)
+        //     {
+        //         hitFraction = rayOutput.HitFraction;
+        //         hitTagIndex = rayOutput.HitTagIndex;
+        //         detectFruit = true;
+        //         break;
+        //     }
+        // }
+        // sensor.AddObservation(detectFruit);
+        // sensor.AddObservation(hitFraction);
+        // sensor.AddObservation(hitTagIndex);
     }
 
     public override void OnActionReceived(ActionBuffers actions)
