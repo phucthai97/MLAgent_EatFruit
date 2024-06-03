@@ -2023,6 +2023,7 @@ MonoBehaviour:
   - {fileID: 1290180621}
   - {fileID: 703487935}
   - {fileID: 130855837}
+  - {fileID: 649967076}
   _prefabItem: {fileID: 6596918748920635153, guid: 49430e9d527ccdb43b015fcaf4cbb1f6, type: 3}
   _initialSize: 1
   _fruits: []
