@@ -5,6 +5,7 @@ using Unity.MLAgents;
 using Unity.MLAgents.Sensors;
 using Unity.MLAgents.Actuators;
 using TMPro;
+using System.Threading;
 
 public class Player : Agent
 {
@@ -12,7 +13,8 @@ public class Player : Agent
     [SerializeField] private float _jumpForce = 30f;
     [SerializeField] private bool _isGrounded;
     [SerializeField] private Rigidbody2D _rd2d;
-    [SerializeField] private TextMeshProUGUI _txtmpReward;
+    [SerializeField] private TextMeshProUGUI _txtmpCountWin;
+    [SerializeField] private int _countWin = 0;
 
     //[SerializeField] private GameManager _gameManager;
     // [SerializeField] private RayPerceptionSensorComponent2D _raySensorObstacle;
@@ -89,6 +91,8 @@ public class Player : Agent
         {
             SetReward(-1);
             EndEpisode();
+            _countWin--;
+            _txtmpCountWin.text = _countWin.ToString();
         }
 
         Vector2 velocity = _rd2d.velocity;
@@ -174,8 +178,10 @@ public class Player : Agent
         // }
         // else
         // {
-            SetReward(1f);
-            EndEpisode();
+        SetReward(1f);
+        EndEpisode();
+        _countWin++;
+        _txtmpCountWin.text = _countWin.ToString();
         //}
     }
 

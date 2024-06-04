@@ -3351,8 +3351,8 @@ Transform:
   m_GameObject: {fileID: 1119666775}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 50, y: 10, z: 0}
-  m_LocalScale: {x: 20, y: 50, z: 1}
+  m_LocalPosition: {x: 50, y: 15, z: 0}
+  m_LocalScale: {x: 20, y: 65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1822788684}
@@ -4683,7 +4683,7 @@ GameObject:
   - component: {fileID: 1648289251}
   - component: {fileID: 1648289250}
   m_Layer: 5
-  m_Name: Point
+  m_Name: CountWin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4896,7 +4896,8 @@ MonoBehaviour:
   _jumpForce: 42
   _isGrounded: 0
   _rd2d: {fileID: 1649641845}
-  _txtmpReward: {fileID: 1648289250}
+  _txtmpCountWin: {fileID: 1648289250}
+  _countWin: 0
   _raySensorFruit: {fileID: 198879551}
 --- !u!114 &1649641843
 MonoBehaviour:
@@ -5654,8 +5655,8 @@ Transform:
   m_GameObject: {fileID: 1955723314}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -50, y: 10, z: 0}
-  m_LocalScale: {x: 20, y: 50, z: 1}
+  m_LocalPosition: {x: -50, y: 15, z: 0}
+  m_LocalScale: {x: 20, y: 65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1822788684}
