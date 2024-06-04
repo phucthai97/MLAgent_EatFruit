@@ -66,7 +66,6 @@ public class Player : Agent
             {
                 //hitFraction = rayOutput.HitFraction;
                 //hitTagIndex = rayOutput.HitTagIndex;
-                Debug.Log($"detectFruit!");
                 detectFruit = true;
                 break;
             }
