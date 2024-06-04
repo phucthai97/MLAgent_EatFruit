@@ -13,9 +13,9 @@ public class Player : Agent
     [SerializeField] private bool _isGrounded;
     [SerializeField] private Rigidbody2D _rd2d;
     [SerializeField] private TextMeshProUGUI _txtmpReward;
-    [SerializeField] private GameManager _gameManager;
 
-    [SerializeField] private RayPerceptionSensorComponent2D _raySensorObstacle;
+    //[SerializeField] private GameManager _gameManager;
+    // [SerializeField] private RayPerceptionSensorComponent2D _raySensorObstacle;
     [SerializeField] private RayPerceptionSensorComponent2D _raySensorFruit;
 
     void FixedUpdate()
@@ -55,24 +55,25 @@ public class Player : Agent
         // }
 
 
-        // rayPerceptionInput = _raySensorFruit.GetRayPerceptionInput();
-        // rayPerceptionOutput = RayPerceptionSensor.Perceive(rayPerceptionInput);
-        // bool detectFruit = false;
-        // float hitFraction = 0;
-        // int hitTagIndex = 0;
-        // foreach (var rayOutput in rayPerceptionOutput.RayOutputs)
-        // {
-        //     if (rayOutput.HitTaggedObject)
-        //     {
-        //         hitFraction = rayOutput.HitFraction;
-        //         hitTagIndex = rayOutput.HitTagIndex;
-        //         detectFruit = true;
-        //         break;
-        //     }
-        // }
-        // sensor.AddObservation(detectFruit);
-        // sensor.AddObservation(hitFraction);
-        // sensor.AddObservation(hitTagIndex);
+        RayPerceptionInput rayPerceptionInput = _raySensorFruit.GetRayPerceptionInput();
+        RayPerceptionOutput rayPerceptionOutput = RayPerceptionSensor.Perceive(rayPerceptionInput);
+        bool detectFruit = false;
+        //float hitFraction = 0;
+        //int hitTagIndex = 0;
+        foreach (var rayOutput in rayPerceptionOutput.RayOutputs)
+        {
+            if (rayOutput.HitTaggedObject)
+            {
+                //hitFraction = rayOutput.HitFraction;
+                //hitTagIndex = rayOutput.HitTagIndex;
+                Debug.Log($"detectFruit!");
+                detectFruit = true;
+                break;
+            }
+        }
+        sensor.AddObservation(detectFruit);
+        //sensor.AddObservation(hitFraction);
+        //sensor.AddObservation(hitTagIndex);
     }
 
     public override void OnActionReceived(ActionBuffers actions)
@@ -98,10 +99,12 @@ public class Player : Agent
         if (action == 1)
         {
             velocity.x = -_moveSpeed;  // Di chuyển sang trái
+            transform.rotation = Quaternion.Euler(0, 180, 0);
         }
         else if (action == 2)
         {
             velocity.x = _moveSpeed;  // Di chuyển sang phải
+            transform.rotation = Quaternion.Euler(0, 0, 0);
         }
         else
         {
