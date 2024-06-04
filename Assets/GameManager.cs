@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
     public void CreateNewItem()
     {
         GameObject fruitGo = GetFruit();
-        fruitGo.transform.position = GetRandomPosition().position + new Vector3(0, 2, 0);
+        fruitGo.transform.position = GetRandomPosition().position + new Vector3(0, 3.6f, 0);
 
         if (Fruits.Count < _initialSize)
             Fruits.Add(fruitGo);
