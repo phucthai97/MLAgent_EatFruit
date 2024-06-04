@@ -15,6 +15,7 @@ public class Player : Agent
     [SerializeField] private Rigidbody2D _rd2d;
     [SerializeField] private TextMeshProUGUI _txtmpCountWin;
     [SerializeField] private int _countWin = 0;
+    [SerializeField] private int _countLose = 0;
 
     //[SerializeField] private GameManager _gameManager;
     // [SerializeField] private RayPerceptionSensorComponent2D _raySensorObstacle;
@@ -91,8 +92,8 @@ public class Player : Agent
         {
             SetReward(-1);
             EndEpisode();
-            _countWin--;
-            _txtmpCountWin.text = _countWin.ToString();
+            _countLose--;
+            _txtmpCountWin.text = $"{_countWin} / {_countLose}";
         }
 
         Vector2 velocity = _rd2d.velocity;
@@ -181,7 +182,7 @@ public class Player : Agent
         SetReward(1f);
         EndEpisode();
         _countWin++;
-        _txtmpCountWin.text = _countWin.ToString();
+        _txtmpCountWin.text = $"{_countWin} / {_countLose}";
         //}
     }
 
