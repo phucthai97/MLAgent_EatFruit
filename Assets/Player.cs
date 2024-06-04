@@ -167,16 +167,16 @@ public class Player : Agent
 
     public void HandleReWard(float value)
     {
-        if (GetCumulativeReward() < 0.8f)
-        {
-            AddReward(value);
-            _txtmpReward.text = $"{GetCumulativeReward()}";
-        }
-        else
-        {
+        // if (GetCumulativeReward() < 0.8f)
+        // {
+        //     AddReward(value);
+        //     _txtmpReward.text = $"{GetCumulativeReward()}";
+        // }
+        // else
+        // {
             SetReward(1f);
             EndEpisode();
-        }
+        //}
     }
 
 }
