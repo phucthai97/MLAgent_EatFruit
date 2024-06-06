@@ -65,7 +65,6 @@ public class Player : Agent
                 detectFruit = true;
                 pos = new Vector2(rayOutput.HitGameObject.transform.localPosition.x
                                 , rayOutput.HitGameObject.transform.localPosition.y);
-                Debug.Log($"pos is {pos}");
                 break;
             }
         }
