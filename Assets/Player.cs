@@ -168,18 +168,18 @@ public class Player : Agent
 
     public void HandleReWard(float value)
     {
-        // if (GetCumulativeReward() < 0.8f)
-        // {
-        //     AddReward(value);
-        //     _txtmpReward.text = $"{GetCumulativeReward()}";
-        // }
-        // else
-        // {
-        SetReward(1f);
-        EndEpisode();
-        _countWin++;
-        _txtmpCountWin.text = $"{_countWin} / {_countLose}";
-        //}
+        if (GetCumulativeReward() < 0.8f)
+        {
+            AddReward(value);
+            //Debug.Log($"{GetCumulativeReward()}");
+        }
+        else
+        {
+            SetReward(1f);
+            EndEpisode();
+            _countWin++;
+            _txtmpCountWin.text = $"{_countWin} / {_countLose}";
+        }
     }
 
 }
