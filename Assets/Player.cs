@@ -1,11 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Unity.MLAgents;
 using Unity.MLAgents.Sensors;
 using Unity.MLAgents.Actuators;
 using TMPro;
-using System.Threading;
 
 public class Player : Agent
 {
@@ -16,9 +13,6 @@ public class Player : Agent
     [SerializeField] private TextMeshProUGUI _txtmpCountWin;
     [SerializeField] private int _countWin = 0;
     [SerializeField] private int _countLose = 0;
-
-    //[SerializeField] private GameManager _gameManager;
-    // [SerializeField] private RayPerceptionSensorComponent2D _raySensorObstacle;
     [SerializeField] private RayPerceptionSensorComponent2D _raySensorFruit;
 
     void FixedUpdate()
@@ -61,8 +55,7 @@ public class Player : Agent
         RayPerceptionInput rayPerceptionInput = _raySensorFruit.GetRayPerceptionInput();
         RayPerceptionOutput rayPerceptionOutput = RayPerceptionSensor.Perceive(rayPerceptionInput);
         bool detectFruit = false;
-        //float hitFraction = 0;
-        //int hitTagIndex = 0;
+        Vector2 pos = new Vector2();
         foreach (var rayOutput in rayPerceptionOutput.RayOutputs)
         {
             if (rayOutput.HitTaggedObject)
@@ -70,10 +63,14 @@ public class Player : Agent
                 //hitFraction = rayOutput.HitFraction;
                 //hitTagIndex = rayOutput.HitTagIndex;
                 detectFruit = true;
+                pos = new Vector2(rayOutput.HitGameObject.transform.localPosition.x
+                                , rayOutput.HitGameObject.transform.localPosition.y);
+                Debug.Log($"pos is {pos}");
                 break;
             }
         }
         sensor.AddObservation(detectFruit);
+        sensor.AddObservation(pos);
         //sensor.AddObservation(hitFraction);
         //sensor.AddObservation(hitTagIndex);
     }
