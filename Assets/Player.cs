@@ -15,6 +15,13 @@ public class Player : Agent
     [SerializeField] private int _countLose = 0;
     [SerializeField] private RayPerceptionSensorComponent2D _raySensorFruit;
 
+    void Start()
+    {
+        transform.localPosition = new Vector3(0, 4, transform.localPosition.z);
+        _rd2d.velocity = Vector2.zero;
+        _rd2d.angularVelocity = 0f;
+    }
+
     void FixedUpdate()
     {
         if (_rd2d.velocity.y < 0)
@@ -23,9 +30,7 @@ public class Player : Agent
 
     public override void OnEpisodeBegin()
     {
-        _rd2d.velocity = Vector2.zero;
-        _rd2d.angularVelocity = 0f;
-        transform.localPosition = new Vector3(0, 4, transform.localPosition.z);
+
     }
 
     public override void CollectObservations(VectorSensor sensor)
@@ -168,18 +173,18 @@ public class Player : Agent
 
     public void HandleReWard(float value)
     {
-        if (GetCumulativeReward() < 0.8f)
-        {
-            AddReward(value);
-            //Debug.Log($"{GetCumulativeReward()}");
-        }
-        else
-        {
-            SetReward(1f);
-            EndEpisode();
-            _countWin++;
-            _txtmpCountWin.text = $"{_countWin} / {_countLose}";
-        }
+        // if (GetCumulativeReward() < 0.8f)
+        // {
+        //     AddReward(value);
+        //     //Debug.Log($"{GetCumulativeReward()}");
+        // }
+        // else
+        // {
+        SetReward(1f);
+        _countWin++;
+        _txtmpCountWin.text = $"{_countWin} / {_countLose}";
+        EndEpisode();
+        //}
     }
 
 }
