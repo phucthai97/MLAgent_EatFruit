@@ -4,14 +4,14 @@ behaviors:
     trainer_type: ppo
     hyperparameters:
       batch_size: 256
-      buffer_size: 4096
-      learning_rate: 0.0003
-      beta: 0.005
-      epsilon: 0.2
+      buffer_size: 40960
+      learning_rate: 0.0004
+      beta: 0.04
+      epsilon: 0.23
       lambd: 0.95
       num_epoch: 3
       shared_critic: false
-      learning_rate_schedule: linear
+      learning_rate_schedule: constant
       beta_schedule: linear
       epsilon_schedule: linear
     network_settings:
@@ -25,7 +25,7 @@ behaviors:
     reward_signals:
       extrinsic:
         gamma: 0.99
-        strength: 0.25
+        strength: 1.0
         network_settings:
           normalize: false
           hidden_units: 128
@@ -34,20 +34,23 @@ behaviors:
           memory: null
           goal_conditioning_type: hyper
           deterministic: false
-      gail:
-        strength: 0.75
-        demo_path: MoveAgent2DDemo/MoveAgent2D.demo
+      #gail:
+      #  strength: 0.1
+      #  demo_path: MoveAgent2DDemo/MoveAgent2D.demo
+      curiosity:
+        gamma: 0.99
+        strength: 0.01
     init_path: null
-    keep_checkpoints: 5
-    checkpoint_interval: 500000
-    max_steps: 500000
-    time_horizon: 64
-    summary_freq: 20000
+    keep_checkpoints: 7
+    checkpoint_interval: 1000000
+    max_steps: 2100000
+    time_horizon: 128
+    summary_freq: 10000
     threaded: false
     self_play: null
-    behavioral_cloning:
-      strength: 0.7
-      demo_path: MoveAgent2DDemo/MoveAgent2D.demo
+    #behavioral_cloning:
+    #  strength: 0.3
+    #  demo_path: MoveAgent2DDemo/MoveAgent2D.demo
 env_settings:
   env_path: null
   env_args: null
@@ -68,7 +71,7 @@ engine_settings:
   no_graphics: false
 environment_parameters: null
 checkpoint_settings:
-  run_id: Player4
+  run_id: Player16
   initialize_from: null
   load_model: false
   resume: false
