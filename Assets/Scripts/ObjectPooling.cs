@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class ObjectPooling : MonoBehaviour
 {
     [SerializeField] private List<Transform> _transOfPosItems;
     private List<Transform> availablePositions;
@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < _initialSize; i++)
         {
             GameObject obj = Instantiate(_prefabItem);
-            obj.GetComponent<Fruit>().GameManager = this;
+            obj.GetComponent<Fruit>().ObjectPooling = this;
             obj.transform.SetParent(_parentGo.transform);
             obj.SetActive(false);
             _fruitsPool.Enqueue(obj);

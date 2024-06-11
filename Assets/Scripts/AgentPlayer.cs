@@ -4,16 +4,17 @@ using Unity.MLAgents.Sensors;
 using Unity.MLAgents.Actuators;
 using TMPro;
 
-public class Player : Agent
+public class AgentPlayer : Agent
 {
-    [SerializeField] private float _moveSpeed = 20f;
-    [SerializeField] private float _jumpForce = 30f;
+    [SerializeField] private float _moveSpeed = 17f;
+    [SerializeField] private float _jumpForce = 43f;
     [SerializeField] private bool _isGrounded;
     [SerializeField] private Rigidbody2D _rd2d;
-    [SerializeField] private TextMeshProUGUI _txtmpCountWin;
-    [SerializeField] private int _countWin = 0;
-    [SerializeField] private int _countLose = 0;
+    //[SerializeField] private TextMeshProUGUI _txtmpCountWin;
+    //[SerializeField] private int _countWin = 0;
+    //[SerializeField] private int _countLose = 0;
     [SerializeField] private RayPerceptionSensorComponent2D _raySensorFruit;
+    [SerializeField] GameManager _gameManager;
 
     void Start()
     {
@@ -41,22 +42,6 @@ public class Player : Agent
         sensor.AddObservation(_rd2d.velocity.y);
         sensor.AddObservation(_isGrounded);
 
-        //sensor.AddObservation(_gameManager.Fruits[0].transform.localPosition.x);
-        //sensor.AddObservation(_gameManager.Fruits[0].transform.localPosition.y);
-
-        // var rayPerceptionInput = _raySensorObstacle.GetRayPerceptionInput();
-        // var rayPerceptionOutput = RayPerceptionSensor.Perceive(rayPerceptionInput);
-        // // Thêm quan sát vào sensor và vẽ tia cảm biến
-        // foreach (var rayOutput in rayPerceptionOutput.RayOutputs)
-        // {
-        //     // Thêm khoảng cách chuẩn hóa
-        //     sensor.AddObservation(rayOutput.HitFraction);
-
-        //     // Thêm chỉ số tag của đối tượng
-        //     sensor.AddObservation(rayOutput.HitTagIndex);
-        // }
-
-
         RayPerceptionInput rayPerceptionInput = _raySensorFruit.GetRayPerceptionInput();
         RayPerceptionOutput rayPerceptionOutput = RayPerceptionSensor.Perceive(rayPerceptionInput);
         bool detectFruit = false;
@@ -65,8 +50,6 @@ public class Player : Agent
         {
             if (rayOutput.HitTaggedObject)
             {
-                //hitFraction = rayOutput.HitFraction;
-                //hitTagIndex = rayOutput.HitTagIndex;
                 detectFruit = true;
                 pos = new Vector2(rayOutput.HitGameObject.transform.localPosition.x
                                 , rayOutput.HitGameObject.transform.localPosition.y);
@@ -75,8 +58,6 @@ public class Player : Agent
         }
         sensor.AddObservation(detectFruit);
         sensor.AddObservation(pos);
-        //sensor.AddObservation(hitFraction);
-        //sensor.AddObservation(hitTagIndex);
     }
 
     public override void OnActionReceived(ActionBuffers actions)
@@ -93,8 +74,8 @@ public class Player : Agent
         {
             SetReward(-1);
             EndEpisode();
-            _countLose--;
-            _txtmpCountWin.text = $"{_countWin} / {_countLose}";
+            // _countLose--;
+            // _txtmpCountWin.text = $"{_countWin} / {_countLose}";
         }
 
         Vector2 velocity = _rd2d.velocity;
@@ -181,10 +162,10 @@ public class Player : Agent
         // else
         // {
         SetReward(1f);
-        _countWin++;
-        _txtmpCountWin.text = $"{_countWin} / {_countLose}";
+        // _countWin++;
+        // _txtmpCountWin.text = $"{_countWin} / {_countLose}";
+        _gameManager.UpdatePoint(-1);
         EndEpisode();
         //}
     }
-
 }
