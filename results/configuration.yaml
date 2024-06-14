@@ -5,13 +5,13 @@ behaviors:
     hyperparameters:
       batch_size: 256
       buffer_size: 40960
-      learning_rate: 0.0004
-      beta: 0.04
-      epsilon: 0.23
-      lambd: 0.95
+      learning_rate: 0.0005
+      beta: 0.05
+      epsilon: 0.25
+      lambd: 0.995
       num_epoch: 3
       shared_critic: false
-      learning_rate_schedule: constant
+      learning_rate_schedule: linear
       beta_schedule: linear
       epsilon_schedule: linear
     network_settings:
@@ -34,23 +34,23 @@ behaviors:
           memory: null
           goal_conditioning_type: hyper
           deterministic: false
-      #gail:
-      #  strength: 0.1
-      #  demo_path: MoveAgent2DDemo/MoveAgent2D.demo
-      curiosity:
-        gamma: 0.99
-        strength: 0.01
+#      gail:
+#        strength: 0.1
+#        demo_path: MoveAgent2DDemo/MoveAgent2D.demo
+#      curiosity:
+#        gamma: 0.99
+#        strength: 0.01
     init_path: null
     keep_checkpoints: 7
     checkpoint_interval: 1000000
-    max_steps: 2100000
+    max_steps: 9300000
     time_horizon: 128
     summary_freq: 10000
     threaded: false
     self_play: null
-    #behavioral_cloning:
-    #  strength: 0.3
-    #  demo_path: MoveAgent2DDemo/MoveAgent2D.demo
+#    behavioral_cloning:
+#      strength: 0.2
+#      demo_path: MoveAgent2DDemo/MoveAgent2D.demo
 env_settings:
   env_path: null
   env_args: null
@@ -71,7 +71,7 @@ engine_settings:
   no_graphics: false
 environment_parameters: null
 checkpoint_settings:
-  run_id: Player16
+  run_id: PLayer24
   initialize_from: null
   load_model: false
   resume: false

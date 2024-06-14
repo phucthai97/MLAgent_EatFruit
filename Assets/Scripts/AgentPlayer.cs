@@ -36,10 +36,14 @@ public class AgentPlayer : Agent
 
     public override void CollectObservations(VectorSensor sensor)
     {
-        sensor.AddObservation(transform.localPosition.x);
-        sensor.AddObservation(transform.localPosition.y);
-        sensor.AddObservation(_rd2d.velocity.x);
-        sensor.AddObservation(_rd2d.velocity.y);
+        Vector2 localPos = new Vector2(transform.localPosition.x, transform.localPosition.y);
+        Vector2 velocity = new Vector2(_rd2d.velocity.x, _rd2d.velocity.y);
+        sensor.AddObservation(localPos);
+        sensor.AddObservation(velocity);
+        //sensor.AddObservation(transform.localPosition.x);
+        //sensor.AddObservation(transform.localPosition.y);
+        //sensor.AddObservation(_rd2d.velocity.x);
+        //sensor.AddObservation(_rd2d.velocity.y);
         sensor.AddObservation(_isGrounded);
 
         RayPerceptionInput rayPerceptionInput = _raySensorFruit.GetRayPerceptionInput();
