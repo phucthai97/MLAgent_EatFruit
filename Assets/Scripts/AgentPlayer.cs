@@ -40,28 +40,24 @@ public class AgentPlayer : Agent
         Vector2 velocity = new Vector2(_rd2d.velocity.x, _rd2d.velocity.y);
         sensor.AddObservation(localPos);
         sensor.AddObservation(velocity);
-        //sensor.AddObservation(transform.localPosition.x);
-        //sensor.AddObservation(transform.localPosition.y);
-        //sensor.AddObservation(_rd2d.velocity.x);
-        //sensor.AddObservation(_rd2d.velocity.y);
-        sensor.AddObservation(_isGrounded);
+        sensor.AddObservation(_isGrounded ? 1.0f : 0.0f);
 
-        RayPerceptionInput rayPerceptionInput = _raySensorFruit.GetRayPerceptionInput();
-        RayPerceptionOutput rayPerceptionOutput = RayPerceptionSensor.Perceive(rayPerceptionInput);
-        bool detectFruit = false;
-        Vector2 pos = new Vector2();
-        foreach (var rayOutput in rayPerceptionOutput.RayOutputs)
-        {
-            if (rayOutput.HitTaggedObject)
-            {
-                detectFruit = true;
-                pos = new Vector2(rayOutput.HitGameObject.transform.localPosition.x
-                                , rayOutput.HitGameObject.transform.localPosition.y);
-                break;
-            }
-        }
-        sensor.AddObservation(detectFruit);
-        sensor.AddObservation(pos);
+        // RayPerceptionInput rayPerceptionInput = _raySensorFruit.GetRayPerceptionInput();
+        // RayPerceptionOutput rayPerceptionOutput = RayPerceptionSensor.Perceive(rayPerceptionInput);
+        // bool detectFruit = false;
+        // Vector2 pos = new Vector2();
+        // foreach (var rayOutput in rayPerceptionOutput.RayOutputs)
+        // {
+        //     if (rayOutput.HitTaggedObject)
+        //     {
+        //         detectFruit = true;
+        //         pos = new Vector2(rayOutput.HitGameObject.transform.localPosition.x
+        //                         , rayOutput.HitGameObject.transform.localPosition.y);
+        //         break;
+        //     }
+        // }
+        // sensor.AddObservation(detectFruit);
+        // sensor.AddObservation(pos);
     }
 
     public override void OnActionReceived(ActionBuffers actions)
@@ -72,20 +68,17 @@ public class AgentPlayer : Agent
 
     private void MoveAgent(ActionSegment<int> act)
     {
-        AddReward(-0.0005f);
-        //Debug.Log($"CumulativeReward: {GetCumulativeReward()}");
+        AddReward(-0.001f);
         if (GetCumulativeReward() < -0.99)
         {
             SetReward(-1);
+            _gameManager.UpdatePoint(-1);
             EndEpisode();
-            // _countLose--;
-            // _txtmpCountWin.text = $"{_countWin} / {_countLose}";
         }
 
         Vector2 velocity = _rd2d.velocity;
         int action = act[0];
         int jumpAction = act[1];
-        //Debug.Log($"MoveAgent {action} {jumpAction}");
         if (action == 1)
         {
             velocity.x = -_moveSpeed;  // Di chuyển sang trái
@@ -168,7 +161,7 @@ public class AgentPlayer : Agent
         SetReward(1f);
         // _countWin++;
         // _txtmpCountWin.text = $"{_countWin} / {_countLose}";
-        _gameManager.UpdatePoint(-1);
+        _gameManager.UpdatePoint(1);
         EndEpisode();
         //}
     }

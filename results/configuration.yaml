@@ -3,12 +3,12 @@ behaviors:
   MoveAgent2D:
     trainer_type: ppo
     hyperparameters:
-      batch_size: 256
-      buffer_size: 40960
+      batch_size: 128
+      buffer_size: 10240
       learning_rate: 0.0005
       beta: 0.05
       epsilon: 0.25
-      lambd: 0.995
+      lambd: 0.94
       num_epoch: 3
       shared_critic: false
       learning_rate_schedule: linear
@@ -25,7 +25,7 @@ behaviors:
     reward_signals:
       extrinsic:
         gamma: 0.99
-        strength: 1.0
+        strength: 0.7
         network_settings:
           normalize: false
           hidden_units: 128
@@ -34,23 +34,23 @@ behaviors:
           memory: null
           goal_conditioning_type: hyper
           deterministic: false
-#      gail:
-#        strength: 0.1
-#        demo_path: MoveAgent2DDemo/MoveAgent2D.demo
-#      curiosity:
-#        gamma: 0.99
-#        strength: 0.01
+      gail:
+        strength: 0.1
+        demo_path: MoveAgent2DDemo/MoveAgent2D.demo
+      curiosity:
+        gamma: 0.99
+        strength: 0.01
     init_path: null
     keep_checkpoints: 7
     checkpoint_interval: 1000000
-    max_steps: 9300000
+    max_steps: 600000
     time_horizon: 128
     summary_freq: 10000
     threaded: false
     self_play: null
-#    behavioral_cloning:
-#      strength: 0.2
-#      demo_path: MoveAgent2DDemo/MoveAgent2D.demo
+    behavioral_cloning:
+      strength: 0.3
+      demo_path: MoveAgent2DDemo/MoveAgent2D.demo
 env_settings:
   env_path: null
   env_args: null
@@ -69,9 +69,17 @@ engine_settings:
   target_frame_rate: -1
   capture_frame_rate: 60
   no_graphics: false
-environment_parameters: null
+environment_parameters:
+  distanceToAgent:
+    curriculum:
+      measure: reward
+      thresholds: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6]
+      min_lesson_length: 600000
+      signal_smoothing: true
+      parameters:
+        difficulty: [4, 6, 8, 10, 12, 14, 16]
 checkpoint_settings:
-  run_id: PLayer24
+  run_id: Player15
   initialize_from: null
   load_model: false
   resume: false
@@ -82,3 +90,4 @@ checkpoint_settings:
 torch_settings:
   device: null
 debug: false
+environment_parameters:
