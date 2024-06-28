@@ -14,9 +14,11 @@ public class ObjectPooling : MonoBehaviour
     [SerializeField] private GameObject _parentGo;
 
     public List<GameObject> Fruits { get => _fruits; set => _fruits = value; }
+    EnvironmentParameters m_ResetParams;
 
     void Awake()
     {
+        m_ResetParams = Academy.Instance.EnvironmentParameters;
         for (int i = 0; i < _initialSize; i++)
         {
             GameObject obj = Instantiate(_prefabItem);
@@ -29,8 +31,10 @@ public class ObjectPooling : MonoBehaviour
 
     void Start()
     {
-        var envParams = Academy.Instance.EnvironmentParameters;
-        envParams.RegisterCallback("difficulty", UpdateDifficulty);
+        //var envParams = Academy.Instance.EnvironmentParameters;
+        //envParams.RegisterCallback("difficulty", UpdateDifficulty);
+        _currentTotalNumPos = (int)m_ResetParams.GetWithDefault("difficulty", 4.0f);
+        m_ResetParams.RegisterCallback("difficulty", UpdateDifficulty);
 
         ResetAvailablePositions();
 

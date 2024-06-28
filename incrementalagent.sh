@@ -8,7 +8,7 @@ time_sleep=1
 #max_steps
 # Extract the max_steps value from the configuration file and assign it to the current_max_steps variable
 current_max_steps=$(grep 'max_steps:' "$file_path" | awk '{print $2}')
-interval_max_steps=700000
+interval_max_steps=9000000
 max_intervals=$2
 max_steps_of_flow=$((current_max_steps + max_intervals*interval_max_steps))
 
