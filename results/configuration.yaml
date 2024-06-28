@@ -25,7 +25,7 @@ behaviors:
     reward_signals:
       extrinsic:
         gamma: 0.99
-        strength: 1.0
+        strength: 0.7
         network_settings:
           normalize: false
           hidden_units: 128
@@ -34,23 +34,23 @@ behaviors:
           memory: null
           goal_conditioning_type: hyper
           deterministic: false
-      #gail:
-      #  strength: 0.1
-      #  demo_path: MoveAgent2DDemo/MoveAgent2D.demo
+      gail:
+        strength: 0.1
+        demo_path: MoveAgent2DDemo/MoveAgent2D.demo
       curiosity:
         gamma: 0.99
         strength: 0.02
     init_path: null
     keep_checkpoints: 15
     checkpoint_interval: 1000000
-    max_steps: 9000000
+    max_steps: 700000
     time_horizon: 256
     summary_freq: 10000
     threaded: false
     self_play: null
-    #behavioral_cloning:
-    #  strength: 0.3
-    #  demo_path: MoveAgent2DDemo/MoveAgent2D.demo
+    behavioral_cloning:
+      strength: 0.3
+      demo_path: MoveAgent2DDemo/MoveAgent2D.demo
 env_settings:
   env_path: null
   env_args: null
@@ -88,65 +88,65 @@ environment_parameters:
     curriculum:
       - name: 1stLessson
         completion_criteria: 
-          measure: reward
+          measure: progress
           behavior: MoveAgent2D
           signal_smoothing: true
           min_lesson_length: 20000
-          threshold: -1.7
+          threshold: 0.1
         value: 4.0
 
       - name: 2ndLesson
         completion_criteria: 
-         measure: reward
+         measure: progress
          behavior: MoveAgent2D
          signal_smoothing: true
          min_lesson_length: 40000
-         threshold: -1.5
+         threshold: 0.2
         value: 6.0
 
       - name: 3rdLesson
         completion_criteria: 
-         measure: reward
+         measure: progress
          behavior: MoveAgent2D
          signal_smoothing: true
          min_lesson_length: 60000
-         threshold: -1.3
+         threshold: 0.3
         value: 8.0
       
       - name: 4rdLesson
         completion_criteria: 
-         measure: reward
+         measure: progress
          behavior: MoveAgent2D
          signal_smoothing: true
          min_lesson_length: 80000
-         threshold: -1.1
+         threshold: 0.4
         value: 10.0
       
       - name: 5thLesson
         completion_criteria: 
-         measure: reward
+         measure: progress
          behavior: MoveAgent2D
          signal_smoothing: true
          min_lesson_length: 100000
-         threshold: -0.5
+         threshold: 0.5
         value: 12.0
 
       - name: 6thLesson
         completion_criteria: 
-         measure: reward
+         measure: progress
          behavior: MoveAgent2D
          signal_smoothing: true
          min_lesson_length: 120000
-         threshold: -0.5
+         threshold: 0.6
         value: 14.0
 
       - name: 7rdLesson
         completion_criteria: 
-         measure: reward
+         measure: progress
          behavior: MoveAgent2D
          signal_smoothing: true
          min_lesson_length: 140000
-         threshold: -0.5
+         threshold: 0.7
         value: 16.0
       
       - name: 7rdLesson

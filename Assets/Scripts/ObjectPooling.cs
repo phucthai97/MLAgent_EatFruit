@@ -18,7 +18,6 @@ public class ObjectPooling : MonoBehaviour
 
     void Awake()
     {
-        m_ResetParams = Academy.Instance.EnvironmentParameters;
         for (int i = 0; i < _initialSize; i++)
         {
             GameObject obj = Instantiate(_prefabItem);
@@ -33,13 +32,17 @@ public class ObjectPooling : MonoBehaviour
     {
         //var envParams = Academy.Instance.EnvironmentParameters;
         //envParams.RegisterCallback("difficulty", UpdateDifficulty);
-        _currentTotalNumPos = (int)m_ResetParams.GetWithDefault("difficulty", 4.0f);
-        m_ResetParams.RegisterCallback("difficulty", UpdateDifficulty);
+        m_ResetParams = Academy.Instance.EnvironmentParameters;
+        SetResetParameters();
 
         ResetAvailablePositions();
-
         for (int i = 0; i < _initialSize; i++)
             CreateNewItem();
+    }
+
+    public void SetResetParameters()
+    {
+        _currentTotalNumPos = (int)m_ResetParams.GetWithDefault("difficulty", 4.0f);
     }
 
     void UpdateDifficulty(float value)

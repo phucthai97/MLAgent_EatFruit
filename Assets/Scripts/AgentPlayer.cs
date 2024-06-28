@@ -15,6 +15,7 @@ public class AgentPlayer : Agent
     //[SerializeField] private int _countLose = 0;
     [SerializeField] private RayPerceptionSensorComponent2D _raySensorFruit;
     [SerializeField] GameManager _gameManager;
+    [SerializeField] ObjectPooling _objectPooling;
 
     void Start()
     {
@@ -31,7 +32,7 @@ public class AgentPlayer : Agent
 
     public override void OnEpisodeBegin()
     {
-
+        _objectPooling.SetResetParameters();
     }
 
     public override void CollectObservations(VectorSensor sensor)
