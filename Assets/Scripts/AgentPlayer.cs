@@ -32,7 +32,8 @@ public class AgentPlayer : Agent
 
     public override void OnEpisodeBegin()
     {
-        _objectPooling.SetResetParameters();
+        //_objectPooling.SetResetParameters();
+
     }
 
     public override void CollectObservations(VectorSensor sensor)
@@ -74,6 +75,7 @@ public class AgentPlayer : Agent
         {
             SetReward(-1);
             _gameManager.UpdatePoint(-1);
+            CurriculumManager.Instance.Calculate(-1);
             EndEpisode();
         }
 
@@ -163,6 +165,7 @@ public class AgentPlayer : Agent
         // _countWin++;
         // _txtmpCountWin.text = $"{_countWin} / {_countLose}";
         _gameManager.UpdatePoint(1);
+        CurriculumManager.Instance.Calculate(1);
         EndEpisode();
         //}
     }

@@ -4,7 +4,6 @@ using Unity.MLAgents;
 
 public class ObjectPooling : MonoBehaviour
 {
-    [SerializeField] private int _currentTotalNumPos = 2;
     [SerializeField] private List<Transform> _transOfPosItems;
     private List<Transform> availablePositions;
     [SerializeField] private GameObject _prefabItem;
@@ -32,30 +31,33 @@ public class ObjectPooling : MonoBehaviour
     {
         //var envParams = Academy.Instance.EnvironmentParameters;
         //envParams.RegisterCallback("difficulty", UpdateDifficulty);
-        m_ResetParams = Academy.Instance.EnvironmentParameters;
-        SetResetParameters();
+        // m_ResetParams = Academy.Instance.EnvironmentParameters;
+        // SetResetParameters();
 
         ResetAvailablePositions();
         for (int i = 0; i < _initialSize; i++)
             CreateNewItem();
+
+
     }
 
-    public void SetResetParameters()
-    {
-        _currentTotalNumPos = (int)m_ResetParams.GetWithDefault("difficulty", 4.0f);
-    }
-
-    void UpdateDifficulty(float value)
-    {
-        Debug.Log($"UpdateDifficulty {value}");
-        _currentTotalNumPos = (int)value;
-    }
+    // public void SetResetParameters()
+    // {
+    //     _currentTotalNumPos = (int)m_ResetParams.GetWithDefault("difficulty", 4.0f);
+    //     // Sử dụng Linq để chuyển đổi tập hợp các khóa thành danh sách
+    //     IList<string> dsds = new List<string>(m_ResetParams.Keys());
+    //     // In các khóa từ danh sách
+    //     foreach (string key in dsds)
+    //     {
+    //         Debug.Log(key);
+    //     }
+    // }
 
     // Hàm để reset danh sách các vị trí có sẵn
     private void ResetAvailablePositions()
     {
         availablePositions = new List<Transform>();
-        for (int i = 0; i < _currentTotalNumPos; i++)
+        for (int i = 0; i < CurriculumManager.Instance.CurrentTotalNumPos; i++)
             availablePositions.Add(_transOfPosItems[i]);
     }
 

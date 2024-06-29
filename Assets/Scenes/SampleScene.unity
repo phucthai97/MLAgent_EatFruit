@@ -2174,7 +2174,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19a189deda26383479d72a89c60185de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentTotalNumPos: 2
   _transOfPosItems:
   - {fileID: 84125276}
   - {fileID: 1096217431}
@@ -4659,7 +4658,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19a189deda26383479d72a89c60185de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentTotalNumPos: 2
   _transOfPosItems:
   - {fileID: 1019897233}
   - {fileID: 1919306020}
@@ -7430,7 +7428,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19a189deda26383479d72a89c60185de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentTotalNumPos: 2
   _transOfPosItems:
   - {fileID: 1511530346}
   - {fileID: 1273689205}
@@ -9131,7 +9128,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19a189deda26383479d72a89c60185de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentTotalNumPos: 2
   _transOfPosItems:
   - {fileID: 2126211410}
   - {fileID: 1932184343}
@@ -14924,7 +14920,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19a189deda26383479d72a89c60185de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentTotalNumPos: 2
   _transOfPosItems:
   - {fileID: 1751864367}
   - {fileID: 2027977973}
@@ -19056,6 +19051,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 665734078}
   m_CullTransparentMesh: 1
+--- !u!1 &667306063
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 667306065}
+  - component: {fileID: 667306064}
+  m_Layer: 0
+  m_Name: CurriculumManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &667306064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667306063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 779aefc26c609e34f952eb49394968c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentTotalNumPos: 2
+  AverageReward: 0
+  TotalEpisode: 0
+  TotalReward: 0
+--- !u!4 &667306065
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667306063}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &668961212
 GameObject:
   m_ObjectHideFlags: 0
@@ -27498,7 +27541,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19a189deda26383479d72a89c60185de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentTotalNumPos: 2
   _transOfPosItems:
   - {fileID: 761926252}
   - {fileID: 1459240031}
@@ -32398,7 +32440,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19a189deda26383479d72a89c60185de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentTotalNumPos: 2
   _transOfPosItems:
   - {fileID: 1734423728}
   - {fileID: 1405440170}
@@ -36595,7 +36636,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19a189deda26383479d72a89c60185de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentTotalNumPos: 2
   _transOfPosItems:
   - {fileID: 205158556}
   - {fileID: 1567324536}
@@ -41332,7 +41372,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19a189deda26383479d72a89c60185de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentTotalNumPos: 2
   _transOfPosItems:
   - {fileID: 1077126254}
   - {fileID: 2044446352}
@@ -53750,7 +53789,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19a189deda26383479d72a89c60185de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentTotalNumPos: 2
   _transOfPosItems:
   - {fileID: 1130085402}
   - {fileID: 895202302}
@@ -63025,7 +63063,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19a189deda26383479d72a89c60185de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentTotalNumPos: 2
   _transOfPosItems:
   - {fileID: 2017917524}
   - {fileID: 513783337}
@@ -64782,7 +64819,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19a189deda26383479d72a89c60185de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentTotalNumPos: 2
   _transOfPosItems:
   - {fileID: 1211549637}
   - {fileID: 1612270508}
@@ -65796,6 +65832,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 300217572}
+  - {fileID: 667306065}
   - {fileID: 1426468736}
   - {fileID: 729272399}
   - {fileID: 2111226416}
@@ -65804,7 +65841,7 @@ SceneRoots:
   - {fileID: 1926053575}
   - {fileID: 1945529148}
   - {fileID: 1549095693}
-  - {fileID: 853147990}
   - {fileID: 1591783838}
-  - {fileID: 534083042}
   - {fileID: 1695109364}
+  - {fileID: 534083042}
+  - {fileID: 853147990}
