@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        Debug.Log($"Branch 2 merge");
         Application.targetFrameRate = 60;
         //QualitySettings.vSyncCount = 0;
     }
@@ -16,6 +15,7 @@ public class GameManager : MonoBehaviour
     public void UpdatePoint(int value)
     {
         Debug.Log($"Branch 1 merge");
+        Debug.Log($"Branch 2 merge");
         _point += value;
         _txtmpPoint.text = _point.ToString();
     }
