@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        Debug.Log($"Branch 2 merge");
         Application.targetFrameRate = 60;
         //QualitySettings.vSyncCount = 0;
     }
