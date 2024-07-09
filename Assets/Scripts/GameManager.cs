@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
 
     public void UpdatePoint(int value)
     {
+        Debug.Log($"Branch 1 merge");
         _point += value;
         _txtmpPoint.text = _point.ToString();
     }
